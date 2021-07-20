@@ -1,0 +1,53 @@
+{
+	"manifest_version": 2,
+	"name": "WikiStory",
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\WikiStory\\": "includes/"
+	},
+	"ContentHandlers": {
+		"story": "MediaWiki\\Extension\\WikiStory\\StoryContentHandler"
+	},
+	"Actions": {
+		"amp": true
+	},
+	"namespaces": [
+		{
+			"id": 1704,
+			"constant": "NS_STORY",
+			"name": "Story",
+			"content": true,
+			"defaultcontentmodel": "story"
+		},
+		{
+			"id": 1705,
+			"constant": "NS_STORY_TALK",
+			"name": "StoryTalk",
+			"content": true,
+			"defaultcontentmodel": "wikitext"
+		}
+	],
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "WikiStory/resources"
+	},
+	"ResourceModules": {
+		"mw.ext.story.view": {
+			"dependencies": [
+				"wvui"
+			],
+			"packageFiles": [
+				"mw.ext.story.view.js",
+				"App.vue"
+			]
+		},
+		"mw.ext.story.ampplayer": {
+			"scripts": [
+				"amp/amp-story-player-v0.js"
+			],
+			"styles": [
+				"amp/amp-story-player-v0.css",
+				"amp/player-custom.css"
+			]
+		}
+	}
+}
